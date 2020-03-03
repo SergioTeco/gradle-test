@@ -3,7 +3,7 @@ pipeline {
     environment {
         //be sure to replace "felipelujan" with your own Docker Hub username
         //changesss
-        DOCKER_IMAGE_NAME = "felipelujan/gradle-test"
+        DOCKER_IMAGE_NAME = "sergito23/gradle-test"
     }
     stages {
          stage('Build') {	
@@ -30,7 +30,7 @@ pipeline {
             }
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
+                    docker.withRegistry('https://registry.hub.docker.com', '64295789-f281-4160-ac03-797d2ba460e4') {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest")
                     }

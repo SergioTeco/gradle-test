@@ -3,17 +3,9 @@ pipeline {
     environment {
         //be sure to replace "felipelujan" with your own Docker Hub username
         //changesss
-        DOCKER_IMAGE_NAME = "sergito23/gradle-test"
+        DOCKER_IMAGE_NAME = "sergito23/hellonode"
     }
     stages {
-         stage('Build') {	
-             steps {	
-                echo 'Running build automation'	
-                sh 'chmod +x ./gradlew'	
-                sh './gradlew build --no-daemon'	
-            }	
-        }
-       
         stage('Build Docker Image') {
             when {
                 branch 'master'

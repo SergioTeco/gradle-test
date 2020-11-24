@@ -1,3 +1,5 @@
+#primer version de este Dockerfile
+
 FROM node:lts-alpine
 
 # install simple http server for serving static content
